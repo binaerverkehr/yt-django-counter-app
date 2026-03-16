@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+    <title>Counter</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+</head>
+<body>
+    <main class="container">
+        <article>
+            <header>
+                <p>You have pushed the button this many times:</p>
+            </header>
+            <hgroup>
+                <h1>{{ count }}</h1>
+            </hgroup>
+            <form method="post" role="group">
+                {% csrf_token %}
+                <button name="action" value="decrement" class="outline">−</button>
+                <button name="action" value="reset" class="secondary">Reset</button>
+                <button name="action" value="increment">+</button>
+            </form>
+        </article>
+    </main>
+</body>
+</html>
